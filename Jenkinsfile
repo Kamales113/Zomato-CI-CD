@@ -77,9 +77,9 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 sh '''
-                kubectl apply -f kubernetes/deployment.yaml
-                kubectl apply -f kubernetes/service.yaml
-                kubectl apply -f kubernetes/hpa.yaml
+                kubectl apply -f Kubernetes/deployment.yaml
+                kubectl apply -f Kubernetes/service.yaml
+                kubectl apply -f Kubernetes/hpa.yaml
                 kubectl rollout status deployment/zomato
                 '''
             }
